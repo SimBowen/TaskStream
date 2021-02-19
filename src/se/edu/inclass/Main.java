@@ -46,6 +46,11 @@ public class Main {
         }
     }
 
+    public static void  printDataWithStreams(ArrayList<Task> tasksData){
+        tasksData.stream()
+                .forEach(System.out::println);
+    }
+
     public static void printDeadlines(ArrayList<Task> tasksData) {
         for (Task t : tasksData) {
             if (t instanceof Deadline) {
@@ -53,6 +58,7 @@ public class Main {
             }
         }
     }
+
 
     public static void printDeadlinesUsingStreams(ArrayList<Task> tasksData){
         tasksData.stream()
@@ -66,5 +72,6 @@ public class Main {
                 .filter((s) -> s.getDescription().contains(filterString))
                 .collect(toList());
         return list;
+
     }
 }
